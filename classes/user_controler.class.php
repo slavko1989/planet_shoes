@@ -109,7 +109,14 @@ public function register(){
 	 	}
 	 }
 	 public function user_login($user_email,$user_pass){
-	 	$stmt = $this->get_db()->prepare("select * from users where user_email=:user_email and user_pass=:user_pass");
+	 	$stmt = $this->get_db()->prepare("select
+	 	 users.user_name, users.user_email,users.user_pass,
+	 		users.user_id,users.user_info,users.user_img,
+	 		zip_code.zip_code_id,zip_code.zip_code_name
+	 		from users
+			inner join 
+			zip_code on users.zip_code_id =  zip_code.zip_code_id
+	 	 where users.user_email=:user_email and users.user_pass=:user_pass");
 			$stmt->execute(array(':user_email'=>$user_email, 'user_pass'=>$user_pass));
 			if($stmt->rowCount()==0){
 	 			$this->err_log[] = "Your are not signin,try again";
@@ -117,13 +124,15 @@ public function register(){
 		$result = $stmt->fetch(PDO::FETCH_ASSOC);
 		$_SESSION['user_email'] = $result['user_email'];
 		$_SESSION['user_id'] = $result['user_id'];
-		$_SESSION['admin'] = $result['u_type'];
+		$_SESSION['admin'] = $result['zip_code_name'];
 		$_SESSION['user_name'] = $result['user_name'];
 		$_SESSION['img'] = $result['user_img'];
-		if($_SESSION['admin']  == '1'){
+		if($_SESSION['admin']  == 'admin'){
 			header("location:../../../php_projects/planet_shoes\admin/index.php");
-			}else{
-			header("location:../../../php_projects/planet_shoes/user/user_info.php");
+			}elseif($_SESSION['admin']  == 'guest'){
+			header("location:../../../php_projects/planet_shoes/index.php");
+				}else{
+				header("location:../../../php_projects/planet_shoes/user/user_info.php");	
 				}
 		}
 	}

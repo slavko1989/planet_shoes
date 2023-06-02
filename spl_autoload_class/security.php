@@ -3,7 +3,7 @@ function admin_index(){
 include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
 $interface = new Interface_admin();
 $interface->head();
-if(isset($_SESSION['user_id']) && $_SESSION['admin']=='1'){
+if(isset($_SESSION['user_id']) && $_SESSION['admin']=='admin'){
 $interface->top_c();
 $interface->sidebar();
 $interface->dashboard();
@@ -18,7 +18,7 @@ include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
 $interface = new Interface_admin();
 $interface->head();
 $brand = new Brand_View();
-if(isset($_SESSION['user_id']) && $_SESSION['admin']=='1'){
+if(isset($_SESSION['user_id']) && $_SESSION['admin']=='admin'){
 	$interface->top_c();
 	$interface->sidebar();
 	$interface->dashboard();
@@ -32,7 +32,7 @@ function brand(){
 include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
 $interface = new Interface_admin();
 $interface->head();
-if(isset($_SESSION['user_id']) && $_SESSION['admin']=='1'){
+if(isset($_SESSION['user_id']) && $_SESSION['admin']=='admin'){
 $interface->top_c();
 $interface->sidebar();
 $interface->dashboard();
@@ -48,7 +48,7 @@ function cat(){
 	include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
 $interface = new Interface_admin();
 $interface->head();
-if(isset($_SESSION['user_id']) && $_SESSION['admin']=='1'){
+if(isset($_SESSION['user_id']) && $_SESSION['admin']=='admin'){
 $interface->top_c();
 $interface->sidebar();
 $interface->dashboard();
@@ -64,7 +64,7 @@ function cat_edit(){
 include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
 $interface = new Interface_admin();
 $interface->head();
-if(isset($_SESSION['user_id']) && $_SESSION['admin']=='1'){
+if(isset($_SESSION['user_id']) && $_SESSION['admin']=='admin'){
 $interface->top_c();
 $interface->sidebar();
 $interface->dashboard();
@@ -82,7 +82,7 @@ function product(){
 include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
 $interface = new Interface_admin();
 $interface->head();
-if(isset($_SESSION['user_id']) && $_SESSION['admin']=='1'){
+if(isset($_SESSION['user_id']) && $_SESSION['admin']=='admin'){
 $interface->top_c();
 $interface->sidebar();
 $interface->dashboard();
@@ -109,7 +109,7 @@ function edit_product(){
 	include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
 $interface = new Interface_admin();
 $interface->head();
-if(isset($_SESSION['user_id']) && $_SESSION['admin']=='1'){
+if(isset($_SESSION['user_id']) && $_SESSION['admin']=='admin'){
 $interface->top_c();
 $interface->sidebar();
 $interface->dashboard();
@@ -135,7 +135,7 @@ function gender(){
 	include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
 $interface = new Interface_admin();
 $interface->head();
-if(isset($_SESSION['user_id']) && $_SESSION['admin']=='1'){
+if(isset($_SESSION['user_id']) && $_SESSION['admin']=='admin'){
 $interface->top_c();
 $interface->sidebar();
 $interface->dashboard();
@@ -153,7 +153,7 @@ function gender_edit(){
 	include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
 $interface = new Interface_admin();
 $interface->head();
-if(isset($_SESSION['user_id']) && $_SESSION['admin']=='1'){
+if(isset($_SESSION['user_id']) && $_SESSION['admin']=='admin'){
 $interface->top_c();
 $interface->sidebar();
 $interface->dashboard();
@@ -169,7 +169,7 @@ function zip(){
 include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
 $interface = new Interface_admin();
 $interface->head();
-if(isset($_SESSION['user_id']) && $_SESSION['admin']=='1'){
+if(isset($_SESSION['user_id']) && $_SESSION['admin']=='admin'){
 $interface->top_c();
 $interface->sidebar();
 $interface->dashboard();
@@ -186,7 +186,7 @@ function zip_edit(){
 	include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
 $interface = new Interface_admin();
 $interface->head();
-if(isset($_SESSION['user_id']) && $_SESSION['admin']=='1'){
+if(isset($_SESSION['user_id']) && $_SESSION['admin']=='admin'){
 $interface->top_c();
 $interface->sidebar();
 $interface->dashboard();

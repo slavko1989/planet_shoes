@@ -7,7 +7,7 @@
     $view = new UserView();
 
     $view->delete_user();
-    if(isset($_SESSION["admin"]) && isset($_SESSION["user_id"])){
+    if($_SESSION["admin"]=='admin' && isset($_SESSION["user_id"])){
     $account = $view->show_user_account();
     foreach ($account as $admin)
     { ?>
