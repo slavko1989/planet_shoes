@@ -24,10 +24,8 @@
                    if(isset($_SESSION["user_email"]) && isset($_SESSION["user_id"])){
                     if($show = $cart->show_user_cart()){
                    foreach($show as $cart_show){
-                    $start_date = $cart_show->date_shop;
-                    if($start_date){
                     
-
+                    $start_date = $cart_show->date_shop;
                     $price = $cart_show->product_price;
                     $quantity = $cart_show->quantity;
                     @$sum = array($quantity * $price);
@@ -60,21 +58,7 @@
                       <a href="../../../php_projects/planet_shoes/shopping_cart/shopping_cart.php?del_id=<?php echo $cart_show->product_id; ?>" 
                         class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
                   </tr>
-                <?php }else {
-
-
-$expires = strtotime('+1 min', strtotime($start_date));
-
-
-$date_diff=($expires-strtotime($start_date)) / 86400;
-
-echo "Start: ".$start_date."<br>";
-echo "Expire: ".date('Y-m-d H:i:s', $expires)."<br>";
-
-echo round($date_diff, 0)." days left";
-$cart->delete_shop_cart();
-
-                 } } } } ?>
+                <?php  } } } ?>
                 </tbody>
               </table>
             </div>
