@@ -131,9 +131,11 @@ public function register(){
 			header("location:../../../php_projects/planet_shoes\admin/index.php");
 			}elseif($_SESSION['admin']  == 'guest'){
 			header("location:../../../php_projects/planet_shoes/index.php");
-				}else{
+			}elseif($_SESSION['admin']  == 'moderator'){
+			header("location:../../../php_projects/planet_shoes/moderator/index.php");
+			}else{
 				header("location:../../../php_projects/planet_shoes/user/user_info.php");	
-				}
+			}
 		}
 	}
 

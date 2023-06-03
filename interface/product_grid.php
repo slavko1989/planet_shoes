@@ -29,13 +29,13 @@ $data = $pro->view_fetch_rez_for_pag();
   </div>
   <div class="container-fluid">
     <div class="row">
-      <?php include_once(__DIR__."../../js/images_slideshow.php"); ?>
+      
     </div>
   </div>
   <div class="container-fluid">
     <div class="row">
       <br><br><br><br><br><br>
-      <?php include_once(__DIR__."../../js/images_slider.php"); ?>
+      
       
     </div>
   </div>

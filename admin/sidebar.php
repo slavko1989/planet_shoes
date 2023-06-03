@@ -8,14 +8,12 @@
     <div class="w3-col s8 w3-bar">
       <span>
       <?php 
-      if(isset($_SESSION["admin"]) && isset($_SESSION["user_id"])){
+      if($_SESSION["admin"]=="admin" && isset($_SESSION["user_id"])){
       ?>
     Welcome, <strong><?php echo $_SESSION["user_name"];?>
     <img src="../user_img/<?php echo $_SESSION['img']; ?>" class="w3-circle w3-margin-right" style="width:46px">
-</strong> <?php } ?></span><br>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+</strong> <?php  ?></span><br>
+      
     </div>
   </div>
   <hr>
@@ -25,12 +23,16 @@
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
     <a href="../user/users_admin_section.php" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Users</a>
-    <a href="../category/category.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Categorys</a>
-    <a href="../brand/brand.php" class="w3-bar-item w3-button w3-padding"><i class='fab fa-gratipay'></i>  Brands</a>
-    <a href="../gender/gender.php" class="w3-bar-item w3-button w3-padding"><i class='fas fa-venus-mars'></i>  Genders</a>
-    <a href="../product/product.php" class="w3-bar-item w3-button w3-padding"><i class='fas fa-shoe-prints'></i>  Products</a>
-    <a href="../sold_product/sold.php" class="w3-bar-item w3-button w3-padding"><i class='fas fa-comments-dollar'></i>  Sold</a>
-    <a href="../zip_code/zip_code.php" class="w3-bar-item w3-button w3-padding"><i class='fas fa-comments-dollar'></i>  Zip code</a>
-    <a href="../admin/logout.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>Logout</a><br><br>
+    <a href="../category/category.php" class="w3-bar-item w3-button w3-padding"> Categorys</a>
+    <a href="../brand/brand.php" class="w3-bar-item w3-button w3-padding"> Brands</a>
+    <a href="../gender/gender.php" class="w3-bar-item w3-button w3-padding"> Genders</a>
+    <a href="../product/product.php" class="w3-bar-item w3-button w3-padding"> Products</a>
+    <a href="../sold_product/sold.php" class="w3-bar-item w3-button w3-padding"> Sold</a>
+    <a href="../zip_code/zip_code.php" class="w3-bar-item w3-button w3-padding"> Zip code</a>
+    <a href="../admin/logout.php" class="w3-bar-item w3-button w3-padding"> Logout</a><br><br>
   </div>
+
+<?php }else{
+  echo "you dont have permission";
+} ?>
 </nav>

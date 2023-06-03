@@ -1,8 +1,4 @@
-
-
-  
-
-  <div class="w3-panel">
+<div class="w3-panel">
     <?php
     $view = new UserView();
 
@@ -35,13 +31,11 @@
             <td><?php echo $admin->user_info; ?></td>
             <td><i>Informations</i></td>
           </tr>
-          <tr>
-            <td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
-            <td>Action</td>
-            <td><a href=""><i class="bi bi-pen-fill"></i></a> OR <a href=""><i class="bi bi-trash3-fill"></i></a></td>          
-          </tr>
+         
         </table>
       </div>
     </div>
-  <?php } }?>
+  <?php } }else{
+    echo "you don't have permission";
+  }?>
   </div>

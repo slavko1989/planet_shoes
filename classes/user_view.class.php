@@ -87,10 +87,10 @@ class UserView extends UserControler{
 				$this->user_email(),$this->user_pass(),
 				$this->user_img(),$this->user_info());
 			if($edit){
-				$path= dirname(__FILE__) . "../../images/";
+				$path= dirname(__FILE__) . "../../user_img/";
                 $full_path = $path . $this->user_img();
                     move_uploaded_file($this->user_img_tmp(), $full_path);
-                    header("location:../users/user_page.php");
+                    //header("location:../users/user_page.php");
                     
 	 		}else{
 	 			echo "<p class='php_mess_err'>FAILED EDIT</p>";
