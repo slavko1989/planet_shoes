@@ -24,6 +24,10 @@
                    if(isset($_SESSION["user_email"]) && isset($_SESSION["user_id"])){
                     if($show = $cart->show_user_cart()){
                    foreach($show as $cart_show){
+                    $start_date = $cart_show->date_shop;
+                    if($start_date){
+                    
+
                     $price = $cart_show->product_price;
                     $quantity = $cart_show->quantity;
                     @$sum = array($quantity * $price);
@@ -35,7 +39,7 @@
                       <div class="media align-items-center">
                         <img src="../../../php_projects/planet_shoes/img_product/<?php echo $cart_show->product_img;  ?>" class="d-block ui-w-40 ui-bordered mr-4" alt="">
                         <div class="media-body">
-                          <a href="#" class="d-block text-dark"><?php echo $cart_show->product_name;  ?></a>
+                          <p class="d-block text-dark"><?php echo $cart_show->product_name ."<br>";  echo $start_date; ?></p>
                           <small>
                             <span class="text-muted"><?php echo $cart_show->product_text;  ?></span>
   
@@ -56,7 +60,21 @@
                       <a href="../../../php_projects/planet_shoes/shopping_cart/shopping_cart.php?del_id=<?php echo $cart_show->product_id; ?>" 
                         class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
                   </tr>
-                <?php } } }?>
+                <?php }else {
+
+
+$expires = strtotime('+1 min', strtotime($start_date));
+
+
+$date_diff=($expires-strtotime($start_date)) / 86400;
+
+echo "Start: ".$start_date."<br>";
+echo "Expire: ".date('Y-m-d H:i:s', $expires)."<br>";
+
+echo round($date_diff, 0)." days left";
+$cart->delete_shop_cart();
+
+                 } } } } ?>
                 </tbody>
               </table>
             </div>

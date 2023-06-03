@@ -80,6 +80,11 @@ class Shop_Controller extends Model{
         $stmt->bindValue(":product_id",$p_id);
         return $stmt->execute();
     }
+
+     public function delete_shop_cart(){
+        $stmt = $this->get_db()->prepare("delete from shopping_cart");
+        return $stmt->execute();
+    }
     public function updateQuantity($sh_id,$q){
         $stmt = $this->get_db()->prepare("update shopping_cart set quantity=:quantity where shopping_cart_id=:shopping_cart_id");
         $stmt->bindValue(":shopping_cart_id",$sh_id);
