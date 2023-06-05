@@ -1,5 +1,31 @@
 <?php
 
+function update_user_info(){
+
+		include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
+$interface = new Interface_admin();
+$user_panel = new Interface_class();
+
+$interface->head();
+if(isset($_SESSION["user_email"]) && isset($_SESSION["user_id"])){
+
+$interface->top_c();
+$user_panel->user_sidebar();
+$user_panel->user_dashboard();
+$count = new Prd_View();
+$view = new UserView();
+$view->get_edit_user_info();
+
+
+
+include_once(__DIR__."../../components/update_user_info_component.php");
+$interface->footer();
+}else{
+	echo "you don't have permission";
+}
+
+}
+
 function user_info(){
 	include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
 $interface = new Interface_admin();
@@ -13,6 +39,7 @@ $user_panel->user_dashboard();
 $count = new Prd_View();
 $view = new UserView();
 $view->add_user_info();
+$view->delete_user_info();
 
     $account = $view->return_user_info();
     include_once(__DIR__."../../components/user_info_component.php");

@@ -58,7 +58,12 @@
         <tr>
           <td><i class="bi bi-backspace-reverse-fill"></i></td>
           <td>Action</td>
-          <td><a href=""><i class="bi bi-pen-fill"></i></a> OR <a href="user_info.php?del_id=<?php echo $info->user_info_id; ?>"><i class="bi bi-trash3-fill"></i></a></td>
+          <td>
+            <a href="user_info.php?del_id=<?php echo $info->user_info_id; ?>">
+              <i class="bi bi-trash3-fill"></i>
+              
+            </a> 
+            OR <a href="info_update.php?edit_user_info=<?php echo $info->user_info_id; ?>"><i class="bi bi-pen-fill"></i></a></td>
         </tr>
         <?php } } ?>
       </table>

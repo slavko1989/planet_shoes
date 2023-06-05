@@ -100,6 +100,24 @@ class UserView extends UserControler{
 	}
 }
 
+	public function get_edit_user_info(){
+		if($_SERVER['REQUEST_METHOD']=="POST"){
+			if(isset($_POST["edit_info"])){
+			return $this->edit_user_info($this->user_info_id(),$this->state(),
+				$this->city(),$this->streat(),
+				$this->phone(),$this->p_code(),$this->add_text(),$this->user_id());
+		}
+			
+	}
+}
+
+public function delete_user_info(){
+		if(isset($_GET["del_id"])){
+			$id = $_GET["del_id"];
+			$this->get_delete_user_info($id);
+		}
+	}
+
 public function update_pass(){
 	if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST["new"])){
 	if(isset($_SESSION["user_email"]) && isset($_SESSION["user_id"])){

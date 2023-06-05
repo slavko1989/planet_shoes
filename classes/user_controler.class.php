@@ -218,6 +218,28 @@ public function register(){
         return $stmt->rowCount();
     }
 
+    public function edit_user_info($u_id,$s,$c,$st,$p,$pc,$t,$user_id){
+	 	$stmt = $this->get_db()->prepare("update user_info set  user_info_id=:user_info_id,
+	 		state=:state,city=:city,streat=:streat,
+	 		phone=:phone,p_code=:p_code,add_text=:add_text
+	 	 	where user_id=:user_id");
+        $stmt->bindValue("user_info_id",$u_id);
+        $stmt->bindValue("state",$s);
+        $stmt->bindValue("city",$c);
+        $stmt->bindValue("streat",$st);
+        $stmt->bindValue("phone",$p);
+        $stmt->bindValue("p_code",$pc);
+        $stmt->bindValue("add_text",$t);
+        $stmt->bindValue("user_id",$user_id);
+        return $stmt->execute();
+	 }
+
+	 public function get_delete_user_info($id){
+	 	$stmt =  $this->get_db()->prepare("delete from user_info where user_info_id=:user_info_id");
+	 	$stmt->bindValue(":user_info_id",$id);
+        return $stmt->execute();
+    }
+
     // zip code
 
 
