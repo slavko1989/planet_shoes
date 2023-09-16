@@ -1,5 +1,5 @@
  <?php
-
+//nasledjuemo brand controller klasu
 include_once(__DIR__ ."../../classes/brand.class.php");
 class Brand_View extends Brand_Controller{
 
@@ -7,20 +7,20 @@ class Brand_View extends Brand_Controller{
     {
         parent::__construct();
     }
-  public function show_brand(){
-        return $this->get_brand();
+  public function show_brand(){ 
+        return $this->get_brand();// pozivamo iz nasledjene klase metodu sa kljucnom recju this
     }
-     public function show_brand_id(){
-        if(isset($_GET["brand_id"])){
+     public function show_brand_id(){ // metoda nam vraca brand po id-ju
+        if(isset($_GET["brand_id"])){ //proveramo ako je prikupljen podatak sa get metodom i ima vrednost id, vracamo metodu koju smo kreirali u brand controlleru
             $brand_id = $_GET["brand_id"];
             return $this->get_brand_id($brand_id);
         }
     }
 
     public function add_brand_view(){
-        if($_SERVER["REQUEST_METHOD"]=="POST"){
+        if($_SERVER["REQUEST_METHOD"]=="POST"){ //ako je metoda magic method post, i ako je issetovana post metoda za kreiranje novog brenda mozemo da izvrsimo radnju
             if(isset($_POST["add_brand"])){
-                $this->add_brand($this->brand_name());
+                $this->add_brand($this->brand_name());// pozivamo metodu iz controllera, i dajemo vrednost metodi brand_name koja ce se kreirati u bazi
                 echo "<p class='php_mess'>Added Successfully</p>";
             }
         }
