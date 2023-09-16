@@ -1,3 +1,11 @@
+/* Instancirali smo objekat User klase. Sesiji smo dali vrednost koja nam vraca kao rezultat da li je pokrenuta sesija za admin autentifikaciju i autorizaciju.
+Ako je tvrdnja tacna provlacimo kroz petlju sve ostale podatke koje korisnik ima, u ovom slucaju admin. Ako pokusa neko d=roz url da ukuca putanju, 
+dobice poruku da nema pravo biti na ovoj stranici.
+
+U bazi imamo tri tabele, user, user_info, zip_code. Relacione tabele. User tabele sadrzi name, email, password i tip korisnika(da li je admin, guest.. tabela zip_code ili sifarnik)
+U tabeli user info imamo podatke o korsniku gde zivi... 
+
+
 <div class="w3-panel">
     <?php
     $view = new UserView();
