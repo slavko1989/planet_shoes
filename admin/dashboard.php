@@ -1,4 +1,5 @@
-//Pocetna strana admin panela. Pojasnicu metode u njihovim kalsama, ovde samo predstavljam koji rezultat one vracaju
+/*Pocetna strana admin panela. Pojasnicu metode u njihovim klasama, ovde samo predstavljam koji rezultat one vracaju. 
+Sve skripte su podeljene da bi na kraju bile grupisane i pozvane kao konacan rezultat na index stranici */
 
 <?php 
 /* Spl autoload function mozemo posmatrati kao registrator za klase. Kod nam cini bolje citlivijim,
