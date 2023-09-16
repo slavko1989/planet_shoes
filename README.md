@@ -1,5 +1,8 @@
 # planet_shoes
 
+Pisanje koda, nacin na koji sam kodirao, objasnio sam na svakoj stranici.
+
+
 Primer veb aplikacije za kupovinu patika. Sajt je radjen sa php programskim jezikom u objektnom orjentisanom konceptu.
 Za template koristio sam bootstrap, html, css, malo js za desavanje na stranici.
 Nisam radio "rucno mvc patern", druge projekte radio sam u laravelu.
