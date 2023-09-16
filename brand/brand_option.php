@@ -1,9 +1,9 @@
-
+/*Stranica gde korisnik moze izabrati proizvode po brendu, tipa nike,adidas, itd..
 <?php
 
 include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
-$brand_option = new Brand_View();
-$interface = new Interface_class();
+$brand_option = new Brand_View();// instanca klase gde pozivamo da nam metoda vrati kroz petlju porizvode samo po brendovima
+$interface = new Interface_class();//instanca klase gde sam podelio template sajta u metode
 $interface->head();
 $interface->sidebar();
 $interface->top_menu();
