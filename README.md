@@ -1,6 +1,6 @@
 # planet_shoes
 
-Pisanje koda, nacin na koji sam kodirao, objasnio sam na svakoj stranici na kojoj je bilo bitno.
+
 
 
 Primer veb aplikacije za kupovinu patika. Sajt je radjen sa php programskim jezikom u objektnom orjentisanom konceptu.
