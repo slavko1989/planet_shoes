@@ -1,6 +1,12 @@
-<!-- Overlay effect when opening sidebar on small screens -->
+//Pocetna strana admin panela. Pojasnicu metode u njihovim kalsama, ovde samo predstavljam koji rezultat one vracaju
+
 <?php 
-include_once(__DIR__."../../spl_autoload_class/autoload_class.php");
+/* Spl autoload function mozemo posmatrati kao registrator za klase. Kod nam cini bolje citlivijim,
+daje nam prednost u tome da ne moramo svaki put da pozivamo putanju neke klase. 
+A to moze da bude problem kada se rade veliki projekti gde moramo pozvati na nekoj stranici desetak klasa gde cemo za svaku klasu instancirsti objekte.   */
+include_once(__DIR__."../../spl_autoload_class/autoload_class.php"); 
+
+//insr=tance klasa za proizvode, prodate proizvode i korisnike
 $count = new Prd_View();
 $sold = new Sold_View();
 $user = new UserView();
@@ -22,7 +28,8 @@ $user = new UserView();
         <div class="w3-right">
            
           <h3><?php
-              $sum = $count->show_sum_product();
+            
+              $sum = $count->show_sum_product(); //metoda nam vraca ukupnu cenu svih proizvoda koji  se prodaju, dodatno cu pojasniti metodu kada dodjemo do te klase
               foreach($sum as $all){
               $price = 'sum(product_price)';
               echo $all->$price."$"; 
@@ -37,7 +44,7 @@ $user = new UserView();
       <div class="w3-container w3-blue w3-padding-16">
         <div class="w3-left"><i class='fas fa-shopping-cart' style='font-size:36px'></i></div>
         <div class="w3-right">
-          <h3><?php echo $sold->view_number_of_sold_prd(); ?></h3>
+          <h3><?php echo $sold->view_number_of_sold_prd(); ?></h3> //prikaz prodatih proizvoda
         </div>
         <div class="w3-clear"></div>
         <h4>Sold</h4>
@@ -49,7 +56,7 @@ $user = new UserView();
         <div class="w3-right">
           <h3>
             <?php
-              $s =  $sold->view_sold_price();
+              $s =  $sold->view_sold_price(); // prikaz ukupne zarade
               foreach($s as $m){
                 $pr = $m->product_price;
                 $q = $m->quantity;
@@ -72,7 +79,7 @@ $user = new UserView();
         <div class="w3-right">
           <h3>
             <?php
-            echo $user->view_number_of_users();
+            echo $user->view_number_of_users(); //prikaz registrovanih korisnika
             ?>
           </h3>
         </div>
